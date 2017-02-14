@@ -9,7 +9,7 @@ public class Ball
 	// information needed to represent a Ball
 	// Feel free to more instance variables if you think it will 
 	// support your work... 
-	
+	private double ballSpeed = 1;
 	private double xPosition;			// The X coordinate of this Ball
 	private double yPosition;			// The Y coordinate of this Ball
 	private double size;				// The diameter of this Ball
@@ -75,23 +75,33 @@ public class Ball
 	{
 		return colour;
 	}
-	public void moveBall(double xMove, double yMove, double ballSpeed)
+	public void setSpeed(double speed)
 	{
-		double x = getXPosition();
-		double y = getYPosition();
-		double i = ballSpeed; 
-		double j = ballSpeed;
-		
-		setXPosition(x = x+ xMove*i);
-
-		setYPosition(y = y+ yMove*j);
+		ballSpeed = speed;
 	}
-	public Ball(double x, double y, double diameter, String col)
+	public void moveDown()
+	{
+		setYPosition(getYPosition() + ballSpeed);
+	}
+	public void moveUp()
+	{
+		setYPosition(getYPosition() - ballSpeed);
+	}
+	public void moveLeft()
+	{
+		setXPosition(getXPosition() - ballSpeed);
+	}
+	public void moveRight()
+	{
+		setXPosition(getXPosition() + ballSpeed);
+	}
+	public Ball(double x, double y, double diameter, String col, double speed)
 	{
 		xPosition = x;
 		yPosition = y;
 
 		size = diameter;
 		colour = col;
+		ballSpeed = speed;
 	}	
 }
