@@ -75,8 +75,17 @@ public class Ball
 	{
 		return colour;
 	}
+	public void moveBall(double xMove, double yMove, double ballSpeed)
+	{
+		double x = getXPosition();
+		double y = getYPosition();
+		double i = ballSpeed; 
+		double j = ballSpeed;
+		
+		setXPosition(x = x+ xMove*i);
 
-
+		setYPosition(y = y+ yMove*j);
+	}
 	public Ball(double x, double y, double diameter, String col)
 	{
 		xPosition = x;
