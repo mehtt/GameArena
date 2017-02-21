@@ -75,10 +75,17 @@ public class Ball
 	{
 		return colour;
 	}
+	
+	public double getSpeed()
+	{
+		return ballSpeed;
+	}
+	
 	public void setSpeed(double speed)
 	{
 		ballSpeed = speed;
 	}
+	
 	public void moveDown()
 	{
 		setYPosition(getYPosition() + ballSpeed);
@@ -95,6 +102,7 @@ public class Ball
 	{
 		setXPosition(getXPosition() + ballSpeed);
 	}
+	
 	public Ball(double x, double y, double diameter, String col, double speed)
 	{
 		xPosition = x;
